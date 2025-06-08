@@ -1,0 +1,859 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+:root {
+  --standard-key-size: 5rem;
+}
+
+html {
+  font-size: var(--def-fs);
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: var(--ff);
+  line-height: 1;
+
+  background-image: url('assets/wall.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* TITLE */
+
+.title{
+  max-width: 130rem;
+  margin-top: 2%;
+  padding: 1.5rem 3.2rem 1.5rem;
+  text-align: center;
+}
+
+.title h1{
+  font-size: 5rem;
+  font-weight: bolder;
+  color: white;
+}
+
+.title .ampersand {
+  color: red;
+}
+
+/* CHOICE PANEL*/
+
+.container1 {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    height: 70%;
+    margin-top: 10vh;
+}
+
+.panel {
+    background-color: rgba(49, 49, 49, 0.9);
+    width: 45%;
+    height: 65vh;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow:
+    0 8px 16px rgba(0, 0, 0, 0.6),
+    inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out ,box-shadow 0.5s ease-in-out;
+    
+}
+
+.panel:hover {
+    transform: scale(1.05);
+    box-shadow:
+      0 0 40px rgba(255, 0, 0, 0.9),
+      0 0 50px rgba(200, 0, 0, 0.6),
+      0 0 70px rgba(150, 0, 0, 0.4);
+}
+
+.panel img {
+    width: 80%;
+    height: auto;
+    margin-bottom: 4vh;
+    filter: none; /* No filter by default */
+    transition: filter 0.3s ease-in-out; /* Smooth transition */
+}
+
+.panel:hover img {
+    filter: drop-shadow(0 0 5px red) drop-shadow(0 0 10px red);
+
+}
+
+.panel-label {
+    display: inline;
+    font-size: 5rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.panel-label:nth-child(3){
+  color: red;
+}
+
+.button-container {
+  margin-right: auto;
+  margin-bottom: -2.5vh;
+}
+
+.back{
+  display: none;
+  font-size: 2.5rem;
+  color: white;
+  background-color:transparent;
+}
+
+i{
+  color: red;
+}
+
+
+/* KEYBOARD PANEL*/
+
+.container{
+    height: 97vh;
+    padding: 10vh;
+    background: rgba(49, 49, 49, 0.9);
+    border-radius: 40px;
+    box-shadow:
+    0 8px 16px rgba(0, 0, 0, 0.6),
+    inset 0 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+.intro {
+  width: 100%;
+  margin-top: -6%;
+  padding: 3rem 3.2rem 3rem;
+  text-align: center;
+}
+
+h1 span {
+    color: red;
+    font-size: 5rem;
+}
+
+p {
+    margin-top: 2%;
+    font-size: 2rem;
+    color: white;
+}
+
+.color-selector{
+    font-size: 2rem;
+    margin-left: 123vh;
+    margin-bottom: 3vh;
+    color: white;
+}
+
+.theme-and-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 120rem;
+  margin: 0 auto 2.4rem;
+  transition: all 0.25s;
+}
+
+.toggle-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggle-section span {
+  font-size: 2.4rem;
+  cursor: pointer;
+}
+
+#logTextbox {
+  width: 100%;
+  height: 8vh;
+  font-family: monospace;
+  white-space: pre-wrap;
+  border: 2px solid red;
+  background: rgb(34, 34, 34);
+  color:white;
+  font-size: 1.5rem;
+}
+
+#resetButton, #reset{
+  font-size: 1.5rem;
+  background-color: rgb(46, 46, 46);
+  color: white;
+  padding: 0.5vh;
+}
+
+
+/* MOUSE PANEL*/
+
+.container2 {
+    margin: 2% 10% 5% 10%;
+    width: 80%;
+    height: 90vh;
+    background: rgba(49, 49, 49, 0.9);
+    border-radius: 40px;
+    box-shadow:
+    0 8px 16px rgba(0, 0, 0, 0.6),
+    inset 0 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+.intro1 {
+    margin: 2% 10% 5% 10%;
+    max-width: 130rem;
+    padding: 3rem 3.2rem 3rem;
+    text-align: center;
+}
+.intro1 .paragraph{
+  margin-top: 5%;
+}
+
+textarea {
+  width: 59vh;
+  height: 48vh;
+}
+
+.click {
+  width: 70vh;
+  height: 6vh;
+  margin-top: 1%;
+  margin-left: 10%;
+  background: orange;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  font-size: 3rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+#textarea{
+  margin-top: 1%;
+  margin-left: 10%;
+  width: 70vh;
+  height: 35vh;
+  border: 2px solid red;
+  background: rgb(34, 34, 34);
+  color:white;
+  font-size: 1.5rem;
+}
+
+#count, #dcCount{
+  height: 5vh;
+  width: 36vh;
+  border: 2px solid red;
+  background: rgb(34, 34, 34);
+  color:white;
+  font-size: 1.5rem;
+}
+
+.move1{
+  margin-left: 25%;
+  margin-top: -2%;
+  margin-bottom: -1%;
+  font-size: 3rem;
+}
+
+.move2{
+  margin-left: 10%;
+  font-size: 3rem;
+}
+
+
+.mouse-layout {
+  width: 200px;
+  height: 350px;
+  background: #161616;
+  border-radius: 100px;
+  position: absolute; /* changed from relative */
+  top: 0;              /* stick to the top */
+  left: 65%;           /* center horizontally */
+  transform: translateY(48vh);
+  margin: 0;           /* remove the big margin-bottom */
+  box-shadow: 0 4px 20px rgba(241, 0, 0, 0.2);
+  border: 3px solid #00FFFF;
+  box-shadow: 0 0 20px #00FFFF, 0 0 30px #00FFFF, 0 0 50px #00FFFF;
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.mouse-logo {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 40px;
+  font-weight: bold;
+  color: #00FFFF;
+  text-shadow:
+    0 0 5px #000,
+    0 0 10px #00FFFF,
+    0 0 20px #00FFFF,
+    0 0 30px #00FFFF;
+  animation: logo-glow 2s ease-in-out infinite;
+}
+
+@keyframes logo-glow {
+  0% {
+    text-shadow: 0 0 5px #000;
+    color: #000;
+  }
+  50% {
+    text-shadow:
+      0 0 10px #00FFFF,
+      0 0 20px #00FFFF,
+      0 0 30px #00FFFF;
+    color: #00FFFF;
+  }
+  100% {
+    text-shadow: 0 0 5px #000;
+    color: #000;
+  }
+}
+
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 5px black;
+  }
+  50% {
+    box-shadow: 0 0 20px #00FFFF, 0 0 40px #00FFFF;
+  }
+  100% {
+    box-shadow: 0 0 5px black;
+  }
+}
+
+
+.left-button,
+.right-button,
+.scroll-wheel {
+  position: absolute;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.left-button {
+  top: 5px;
+  left: 5px;
+  width: 94px;
+  height: 150px;
+  border-radius: 90px 0 0 0;
+  background: #161616;
+  border: 2px solid rgb(0, 0, 0); /* Blue border */
+}
+
+.right-button {
+  top: 5px;
+  right: 5px;
+  width: 94px;
+  height: 150px;
+  border-radius: 0 90px 0 0;
+  background: #161616;
+  border: 2px solid rgb(0, 0, 0); /* Blue border */
+}
+
+.scroll-wheel {
+  top: 60px;
+  left: 85px;
+  width: 30px;
+  height: 60px;
+  background: #161616;
+  border-radius: 15px;
+  border: 2px solid rgb(0, 0, 0); /* Blue border */
+  
+  box-shadow: 0 0 20px #00FFFF, 0 0 30px #00FFFF, 0 0 50px #00FFFF;
+  animation: pulse-glow-scroll 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow-scroll {
+  0% {
+    box-shadow: 0 0 5px black;
+  }
+  50% {
+    box-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
+  }
+  100% {
+    box-shadow: 0 0 5px black;
+  }
+}
+
+
+
+
+/* Click/active state */
+.active {
+  background: #00ff08 !important;
+  transform: scale(0.95);
+}
+
+/* Scroll feedback */
+.scroll-up {
+  transform: translateY(-8px);
+}
+.scroll-down {
+  transform: translateY(8px);
+}
+
+
+
+/* slider styling */
+
+
+.slider-container {
+  width: 80%;
+  margin: 1.6rem auto;
+  text-align: center;
+  z-index: 100;
+}
+
+.slider {
+  width: 100%;
+  transform: translateY(1.8rem);
+}
+
+/* Styling the track */
+input[type='range']::-webkit-slider-runnable-track {
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(to right, #ff0000, #888888);
+}
+
+/* Styling the thumb */
+input[type='range']::-webkit-slider-thumb {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: #f50707; /* Thumb color */
+  cursor: pointer;
+  -webkit-appearance: none;
+  transition: all 0.3s ease; /* Smooth transition */
+  transform: translateY(-0.4rem);
+  
+}
+
+input[type='range']::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 10px rgb(84, 84, 84, 0.4);
+  transform: translateY(-0.4rem) scale(1.2);
+}
+
+.slider-value {
+  font-size: 2.4em;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 2px solid red;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgb(84, 84, 84, 0.1); 
+}
+
+/* ------------------ KEYBOARD SECTION ------------------ */
+
+:root {
+  --def-fs: 62.5%;
+  --ff: 'Segoe UI', sans-serif;
+  --color-primary: #343a40;
+  --color-primary-darker: #333;
+  --color-primary-lighter: #555;
+
+  --key-border-radius: 0.6rem;
+
+  --box-shadow-keycaps-value: inset 0 -0.2rem 0 0.3rem;
+  --box-shadow-keycaps-hover-value: inset 0 -0.1rem 0 0.2rem;
+
+  --box-shadow-keycaps: var(--box-shadow-keycaps-value) var(--color-keycaps-shadow);
+  --box-shadow-keycaps-hover: var(--box-shadow-keycaps-hover-value) var(--color-keycaps-shadow);
+
+  --box-shadow-keycaps-accent: var(--box-shadow-keycaps-value) var(--color-keycaps-shadow-accent);
+  --box-shadow-keycaps-accent-hover: var(--box-shadow-keycaps-hover-value) var(--color-keycaps-shadow-accent);
+
+  --box-shadow-keycaps-pressed: var(--box-shadow-keycaps-value) var(--color-keycaps-shadow-pressed);
+  --box-shadow-keycaps-pressed-hover: var(--box-shadow-keycaps-hover-value) var(--color-keycaps-shadow-pressed);
+
+  --color-keyboard: #222222;
+  --color-keyboard-border: #0b0b0b;
+
+  --color-keycaps-legends: #FFFFFF;
+  --color-keycaps-bg: #111111;
+  --color-keycaps-shadow: #ec0800;
+
+  --color-keycaps-legends-accent: #FFFFFF;
+  --color-keycaps-bg-accent: #111111;
+  --color-keycaps-shadow-accent: #ec0800;
+
+  --color-keycaps-legends-pressed: #09ff00;
+  --color-keycaps-bg-pressed: #111111;
+  --color-keycaps-shadow-pressed: #ec0800;
+}
+
+
+
+.keyboard {
+  display: grid;
+  margin: 0 auto;
+  padding: 0.8rem;
+  border-radius: 0.4rem;
+  background-color: var(--color-keyboard);
+  box-shadow: 0 0.4rem 0 0.6rem var(--color-keyboard-border),
+    0 1.2rem 3.2rem rgba(0, 0, 0, 0.1);
+  transform: translateZ(0);
+  transition: all 0.2s;
+}
+
+.full-size {
+  grid-template-columns: 215fr 2fr 45fr 1fr 60fr;
+  max-width: 122rem;
+}
+
+.tkl {
+  grid-template-columns: 215fr 7fr 45fr;
+  max-width: 100rem;
+}
+
+.seventy-five-percent {
+  grid-template-columns: 79rem 0 16.5rem;
+  max-width: 86rem;
+}
+
+.key {
+  width: 100%;
+  height: var(--standard-key-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: var(--key-border-radius);
+  font-size: 1.3rem;
+  font-weight: 500;
+
+  color: var(--color-keycaps-legends);
+  background-color: var(--color-keycaps-bg);
+  box-shadow: var(--box-shadow-keycaps);
+  cursor: pointer;
+
+  transition: all 0.075;
+}
+
+
+.key--accent-color {
+  color: var(--color-keycaps-legends-accent);
+  background-color: var(--color-keycaps-bg-accent);
+  box-shadow: var(--box-shadow-keycaps-accent);
+}
+
+/* making specificity higher by adding .key */
+.key.key--pressed {
+  color: var(--color-keycaps-legends-pressed);
+  background-color: var(--color-keycaps-bg-pressed);
+  box-shadow: var(--box-shadow-keycaps-pressed);
+}
+
+/* key pressing simulation class is for using in js */
+.key:hover,
+.key--accent-color:hover,
+.key--pressed:hover,
+.key-pressing-simulation {
+  transform: scale(0.98);
+  box-shadow: var(--box-shadow-keycaps-hover);
+}
+
+
+.key--accent-color:hover {
+  box-shadow: var(--box-shadow-keycaps-accent-hover);
+}
+
+.key--pressed:hover,
+.key-pressing-simulation {
+  box-shadow: var(--box-shadow-keycaps-pressed-hover);
+}
+
+.key.key-pressing-simulation {
+  color: var(--color-keycaps-legends-pressing);
+}
+
+/* __________________________________
+   ||||||||||||||||||||||||||||||||||
+   |||| GENERAL KB LAYOUT STYLES ||||
+   ||||||||||||||||||||||||||||||||||
+*/
+
+.region {
+  padding: 0.5rem;
+  gap: 0.25rem;
+}
+
+/* contains "ESC" & Function (F1-F12) */
+.function {
+  display: grid;
+  grid-template-columns: 2fr 2fr repeat(4, 2fr) 1fr repeat(4, 2fr) 1fr repeat(
+      4,
+      2fr
+    );
+}
+
+/* contains Top-Located Control (Prt Sc|Scr lck|Pause) keys  */
+.system-control {
+  grid-column: 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* contains Modifiers/Control (Ctrl|Alt|etc.) & Alpha (A-Z) keys */
+.typewriter {
+  grid-row: 2;
+  display: grid;
+}
+
+.first-row,
+.second-row,
+.third-row,
+.fourth-row,
+.fifth-row {
+  display: grid;
+  justify-items: center;
+  gap: 0.25rem;
+}
+
+.first-row {
+  grid-template-columns: repeat(13, 1fr) 2fr;
+}
+
+.second-row {
+  grid-template-columns: 1.5fr repeat(12, 1fr) 1.5fr;
+}
+
+.third-row {
+  grid-template-columns: 1.79fr repeat(11, 1fr) 2.29fr;
+}
+
+.fourth-row {
+  grid-template-columns: 2.29fr repeat(10, 1fr) 2.79fr;
+}
+
+.fifth-row {
+  grid-template-columns: repeat(3, 1.29fr) 6.36fr repeat(4, 1.29fr);
+}
+
+/* contains Navigation (PgUp|PgDn|etc.) & Arrow keys */
+.navigation {
+  grid-column: 3;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+/* contains Numpad Keys */
+.numpad {
+  grid-column: 5;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+/* _______________________________
+   |||||||||||||||||||||||||||||||
+   |||| KEY SPECIFIC STYLES ||||||
+   |||||||||||||||||||||||||||||||
+*/
+
+/**************************/
+/* TYPEWRITER REGION KEYS */
+/**************************/
+
+/* styling keys with sublegends */
+.key--sublegend {
+  display: grid;
+  grid-template-rows: 1fr auto auto 1fr;
+  padding-top: 0.8rem;
+  gap: 0.1rem;
+}
+
+.key--sublegend span:nth-child(odd),
+.key--sublegend span:nth-child(even) {
+  width: 100%;
+  text-align: center;
+  grid-row: 1;
+}
+
+.key--sublegend span:nth-child(even) {
+  grid-row: 2;
+}
+
+/* styling enter key as return sign  */
+.enter span {
+  transform: translateY(-0.25rem);
+  font-size: 2.8rem;
+}
+
+/* windows and context menu icons */
+.metaleft svg {
+  width: 1.8rem;
+  height: 1.8rem;
+  fill: var(--color-keycaps-legends);
+}
+
+.metaleft .key--accent svg {
+  fill: var(--color-keycaps-legends-accent);
+}
+
+.metaleft.key--pressed svg {
+  fill: var(--color-keycaps-legends-pressed);
+}
+
+.metaleft.key-pressing-simulation svg {
+  fill: var(--color-keycaps-legends-pressing);
+}
+
+.metaright svg {
+  width: 1.8rem;
+  height: 1.8rem;
+  fill: var(--color-keycaps-legends);
+}
+
+.metaright .key--accent svg {
+  fill: var(--color-keycaps-legends-accent);
+}
+
+.metaright.key--pressed svg {
+  fill: var(--color-keycaps-legends-pressed);
+}
+
+.metalright.key-pressing-simulation svg {
+  fill: var(--color-keycaps-legends-pressing);
+}
+
+.contextmenu svg {
+  width: 2rem;
+  height: 2rem;
+  stroke: var(--color-keycaps-legends);
+  fill: none;
+}
+
+.contextmenu .key--accent svg {
+  stroke: var(--color-keycaps-legends-accent);
+}
+
+.contextmenu.key--pressed svg {
+  stroke: var(--color-keycaps-legends-pressed);
+}
+
+.contextmenu.key-pressing-simulation svg {
+  stroke: var(--color-keycaps-legends-pressing);
+}
+
+/* spacebar legend */
+.space span {
+  transform: translateY(-1.6rem);
+  font-size: 1.6rem;
+}
+
+/* side keys text aligning */
+.backquote,
+.tab,
+.capslock,
+.shiftleft,
+.controlleft {
+  justify-content: left;
+  padding-left: 1.6rem;
+}
+
+.backspace,
+.enter,
+.shiftright,
+.controlright {
+  justify-content: right;
+  padding-right: 1.6rem;
+}
+
+/**************************/
+/* NAVIGATION REGION KEYS */
+/**************************/
+
+.arrowup {
+  grid-column: 2;
+  grid-row: 4;
+}
+
+.arrowleft,
+.arrowdown,
+.arrowright {
+  grid-row: 5;
+}
+
+.arrowup svg,
+.arrowleft svg,
+.arrowdown svg,
+.arrowright svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: var(--color-keycaps-legends);
+}
+
+.arrowup.key--pressed svg,
+.arrowleft.key--pressed svg,
+.arrowdown.key--pressed svg,
+.arrowright.key--pressed svg {
+  fill: var(--color-keycaps-legends-pressed);
+}
+
+.arrowup.key-pressing-simulation svg,
+.arrowleft.key-pressing-simulation svg,
+.arrowdown.key-pressing-simulation svg,
+.arrowright.key-pressing-simulation svg {
+  fill: var(--color-keycaps-legends-pressing);
+}
+
+/**********************/
+/* NUMPAD REGION KEYS */
+/**********************/
+
+.numpadadd {
+  grid-column: 4;
+  grid-row: 2 / span 2;
+  height: 100%;
+}
+
+.numpadenter {
+  grid-column: 4;
+  grid-row: 4 / span 2;
+  height: 100%;
+}
+.numpad0 {
+  grid-column: 1 / span 2;
+}
+
+/* _____________________________________
+   |||||||||||||||||||||||||||||||||||||
+   |||| Changing Layout Animation ||||||
+   |||||||||||||||||||||||||||||||||||||
+*/
+
+.numpad {
+  transition: all 0.15s;
+}
+
+.hidden--step1 {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+
+  transition: all 0.15;
+}
+
+.hidden--step2 {
+  width: 0;
+  padding: 0;
+}
