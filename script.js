@@ -73,7 +73,16 @@ enableKeyboard();
 
   document.getElementById('resetButton').addEventListener('click', function () {
   document.getElementById('logTextbox').value = '';
+
+  const keys = document.querySelectorAll('.key');
+  keys.forEach(key => {
+    key.classList.remove('key--pressed');
+    key.style.backgroundColor = '';
+    key.style.color = '';
+    key.style.boxShadow = '';
+  });
 });
+
 
 
 // --------------------- CHANGING LAYOUT ---------------------
@@ -116,14 +125,20 @@ function updateLayout() {
   switch (sliderValue) {
     case 1:
       output.textContent = 'Full';
+      document.querySelector('.gif-selector').style.display='block'
+      document.querySelector('.mini-screen').style.display='block'
       changeToFullSize();
       break;
     case 2:
       output.textContent = 'TKL';
+      document.querySelector('.gif-selector').style.display='none'
+      document.querySelector('.mini-screen').style.display='none'
       changeToTKL();
       break;
     case 3:
       output.textContent = '75%';
+      document.querySelector('.gif-selector').style.display='none'
+      document.querySelector('.mini-screen').style.display='none'
       changeTo75();
       break;
     default:
@@ -225,6 +240,20 @@ slider.addEventListener('input', updateLayout);
 // Initial layout update based on default slider value
 updateLayout();
 
+const gifSelect = document.getElementById("gifSelect");
+const miniScreenImg = document.getElementById("miniScreenImg");
+
+gifSelect.addEventListener("change", () => {
+  const selectedGif = gifSelect.value;
+
+  if (selectedGif === "off") {
+    miniScreenImg.style.display = "no ne"; // hide the image
+  } else {
+    miniScreenImg.src = `assets/${selectedGif}`;
+    miniScreenImg.style.display = "block"; // show it back if hidden
+  }
+});
+
 // --------------------- MOUSE TESTER ---------------------
 
 const click = document.getElementById('click');
@@ -238,7 +267,7 @@ reset.addEventListener('click', () => {
   clicks.value = 0;
   dcCount.value = 0;
   textarea.value = '';
-  click.style.background = 'orange';
+  click.style.background = 'rgb(19, 19, 19)';
 });
 
 // Microtime helper

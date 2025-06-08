@@ -87,7 +87,28 @@
       </div>
 
 
-      <p class="color-selector">Select Color: <input type="color" id="color-picker" value="#0b0b0b"></p>
+<div class="top-controls">
+  <p class="color-selector">
+    Select Color: <input type="color" id="color-picker" value="#0b0b0b">
+  </p>
+  <div class="gif-selector">
+    <label for="gifSelect">Select Display:</label>
+    <select id="gifSelect">
+      <option value="red-black.gif">Red & Black</option>
+      <option value="orange-fire.gif">Orange Fire</option>
+      <option value="yellow-Saiyan.gif">Yellow Saiyan</option>
+      <option value="green-zoro.gif">Green Zoro</option>
+      <option value="cyan-sasuke.gif">Cyan Sasuke</option>
+      <option value="blue-gojo.gif">Blue Gojo</option>
+      <option value="purple-gengar.gif">Purple Gengar</option>
+      <option value="pink-anime.gif">Pink Anime</option>
+      <option value="black-brs.gif">Black BRS</option>
+      <option value="white-anime.gif">White Anime</option>
+      <option value="gray-tom.gif">Gray Tom</option>
+      <option value="off">- OFF -</option>
+    </select>
+  </div>
+</div>
 
       <div class="keyboard full-size">
         <section class="function region">
@@ -114,6 +135,12 @@
           <div class="key scrolllock key--accent-color">Scr Lk</div>
           <div class="key pause key--accent-color">Pause</div>
         </section>
+
+        
+        <div class="mini-screen">
+          <img id="miniScreenImg" src="assets/red-black.gif" alt="Mini screen display" />
+        </div>
+
 
         <section class="typewriter region">
           <div class="first-row">
