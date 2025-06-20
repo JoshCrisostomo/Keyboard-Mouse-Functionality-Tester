@@ -11,6 +11,36 @@ colorPicker.addEventListener('input', (event) => {
   document.documentElement.style.setProperty('--color-keycaps-shadow-pressed', event.target.value);
 });
 
+// Mouse Glow Color Selector
+document.addEventListener("DOMContentLoaded", function () {
+    // Get the mouse color picker input
+    const mouseColorPicker = document.getElementById('mouseGlowColor');
+
+    // Get the mouse elements
+    const mouseLayout = document.querySelector('.mouse-layout');
+    const scroll_Wheel = document.querySelector('.scroll-wheel');
+    const logo = document.querySelector('.mouse-logo');
+
+    if (mouseColorPicker && mouseLayout && scroll_Wheel && logo) {
+      // Listen for color changes
+      mouseColorPicker.addEventListener('input', (e) => {
+        const color = e.target.value;
+
+        // Update the CSS variable used in animations
+        document.documentElement.style.setProperty('--glow-color', color);
+
+        // Update static styles that don't use the variable
+        mouseLayout.style.border = `3px solid ${color}`;
+        logo.style.color = color;
+        logo.style.textShadow = `
+          0 0 10px ${color},
+          0 0 20px ${color},
+          0 0 30px ${color}
+        `;
+      });
+    }
+  });
+
 // ------------------- HANDLING KEY PRESS -------------------
 
 function handleKeyPress(e) {
@@ -247,7 +277,7 @@ gifSelect.addEventListener("change", () => {
   const selectedGif = gifSelect.value;
 
   if (selectedGif === "off") {
-    miniScreenImg.style.display = "no ne"; // hide the image
+    miniScreenImg.style.display = "none"; // hide the image
   } else {
     miniScreenImg.src = `assets/${selectedGif}`;
     miniScreenImg.style.display = "block"; // show it back if hidden

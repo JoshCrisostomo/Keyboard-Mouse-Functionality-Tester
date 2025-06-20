@@ -430,7 +430,14 @@
 
           </body>
         </main>
+
+        
+        
+
         <div class="mouse-layout">
+          <p class="mouse-color-selector">
+          Select Color: <input type="color" id="mouseGlowColor" value="#00FFFF">
+        </p>
           <div class="left-button"></div>
           <div class="right-button"></div>
           <div class="scroll-wheel"></div>
