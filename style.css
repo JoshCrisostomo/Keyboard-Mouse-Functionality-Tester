@@ -11,7 +11,7 @@
 
 html {
   font-size: var(--def-fs);
-  overflow: auto;
+  overflow: hidden;
 }
 
 body {
@@ -23,9 +23,10 @@ body {
   line-height: 1;
 
   background-image: url('assets/wall.jpg');
-  background-size: cover;
+  background-size: 100% auto;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center top;
+  background-attachment: fixed;
 }
 
 /* TITLE */
@@ -124,7 +125,9 @@ i{
 /* KEYBOARD PANEL*/
 
 .container{
-    height: 97vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 95vh;
     padding: 10vh;
     background: rgba(49, 49, 49, 0.9);
     border-radius: 40px;
